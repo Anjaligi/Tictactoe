@@ -38,7 +38,7 @@ This Project provides both **SinglePlayer (vs Bot in all three easy, medium and 
 
 1. Clone or download the repository:
    ```bash
-   git clone 
+   git clone https://github.com/Anjaligi/Tictactoe
    cd Tictactoe
 2. Open it in a browser
 ✅ No installation or dependencies required.
