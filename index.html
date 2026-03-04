@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe.com</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <audio id="bg-audio" src="./game-gaming-minecraft-background-music-377647.mp3"  loop></audio>
+    <audio id="winaudio" src="./win.wav" ></audio>
+    <audio id="losedrawaudio" src="./losedraw.wav"></audio>
+    <audio id="beepaudio" src="./beep.wav"></audio>
+
+  <!-- HOMEPAGE (first page) -->
+    <div class="homePage">
+        <i class="material-icons sound">
+            <span class="speaker">🔊</span>
+            <span class="slash"></span>
+        </i>
+        <div class="gameHome">
+            <h1 id="TicTacToe">Tic Tac Toe</h1>
+            <div class="diagonal"></div>
+            <div class="gameimg">
+                <div class="cell">O</div>
+                <div class="cell">X</div>
+                <div class="cell">O</div>
+                <div class="cell">O</div>
+                <div class="cell">O</div>
+                <div class="cell">X</div>
+                <div class="cell">X</div>
+                <div class="cell">X</div>
+                <div class="cell">O</div>
+            </div>
+            <div class="NumberOfPlayer">
+                <div class="playingMode playerNumber" id="singleplayMode">Self VS Bot <i class="material-icons">devices</i></div>
+                <div class="playingMode playerNumber" id="multiplayMode">Multi Player <i class="material-icons">group</i></div>
+                <div class="playingMode" id="trackrecordHOME">Track Record <i class="material-icons">poll</i></div>
+                <div class="playingMode" id="playingmodeTheme">Themes <i class="material-icons">color_lens</i></div>
+            </div>
+        </div>
+        <i class="material-icons mode darkmode">wb_sunny</i>
+    </div>
+
+  <!-- POPUP PAGE (second page) -->
+    <div class="popupforGame" id="popupforgame">
+        <button class="popupButton" id="continueGame">Continue Game</button>
+        <button class="popupButton " id="newGame">New Game</button>
+        <button class="popupButton">Exit</button>      
+    </div>
+
+  <!-- EASY/ MEDIUM/ HARD (third page) -->
+   <div class="difficulty">
+    <button class="difficultymode" id="easymode">Easy</button>
+    <button class="difficultymode" id="mediummode">Medium</button>
+    <button class="difficultymode" id="hardmode">Hard</button>
+    <button id="exitdifficulty">EXIT</button>
+   </div>
+
+  <!-- SINGLE PLAYER (fourth page)-->
+    <div class="singleplayer">
+        <div class="singletop">
+            <i class="material-icons sound multiplayerSound">
+                <span class="speaker">🔊</span>
+                <span class="slash"></span>
+            </i>
+            <h1>Single Player</h1>
+            <i class="material-icons mode darkmode">wb_sunny</i>
+        </div>
+        <div class="singlemid">
+            <div class="board" id="singleBoard">
+                <div class="cell" id="00"></div>
+                <div class="cell" id="01"></div>
+                <div class="cell" id="02"></div>
+                <div class="cell" id="03"></div>
+                <div class="cell" id="04"></div>
+                <div class="cell" id="05"></div>
+                <div class="cell" id="06"></div>
+                <div class="cell" id="07"></div>
+                <div class="cell" id="08"></div>
+            </div>
+            <div class="singleCurrtrack">
+                <span id="singleWin" class="singlw">0</span> <span class="singlw"> Wins</span>
+                <span id="singleLost" class="singll">0</span> <span class="singll"> Lost</span>
+                <span id="singleDraw" class="singld">0</span> <span class="singld"> Draw</span>
+            </div>
+            <p class="winning-message" id="singleWinmsg"></p>
+        </div>
+        <div class="singlebottom">
+            <button class="singleUndo">↺ Undo</button>
+            <div class="button">
+                <button class="restartbutton singleRestart" id="singleStart">Restart Game</button>
+            </div>
+            <button class="singleExit recordexit">🏠⮌ Exit</button>
+        </div>
+    </div>
+
+    <!-- MULTIPLAYER (fifth page) -->
+    <div class="multiplayer">
+        <div class="multiLeft">
+            <i class="material-icons sound multiplayerSound">
+                <span class="speaker multiplayerSpeaker">🔊</span>
+                <span class="slash"></span>
+            </i> <br>
+            <input type="text" value="Player O" id="name1">
+            <div class="imggirl"><img id="girlimg" src="./girl_anime.jpeg"></div>
+            <div>
+                <span id="girlWin">0</span> <span> Wins</span>
+                <span id="girlLost">0</span> <span> Lost</span>
+                <span id="girlDraw">0</span> <span> Draw</span>
+            </div>
+            <button id="undo">↺ Undo</button>
+        </div>
+        <div class="multiMid">
+            <h1>MultiPlayer</h1>
+            <div>
+                <span id="playerTurn"></span>
+            </div>
+            <div class="board" id="multiboard">
+                <div class="cell" id="0"></div>
+                <div class="cell" id="1"></div>
+                <div class="cell" id="2"></div>
+                <div class="cell" id="3"></div>
+                <div class="cell" id="4"></div>
+                <div class="cell" id="5"></div>
+                <div class="cell" id="6"></div>
+                <div class="cell" id="7"></div>
+                <div class="cell" id="8"></div>
+            </div>
+            <div class="button">
+                <button class="restartbutton" id="restartbutton">Restart Game</button>
+            </div>
+            <p class="winning-message" id="winningmessage"></p>
+        </div>
+        <div class="multiRight">
+            <i class="material-icons mode darkmode">wb_sunny</i> <br>
+            <input type="text" value="Player X" id="name2">
+            <div class="imgboy"><img id="boyimg" src="./imgboy.jpg"></div>
+            <div class="winlossmulti">
+                <span id="boyWin">0</span> <span> Wins</span>
+                <span id="boyLost">0</span> <span> Lost</span>
+                <span id="boyDraw">0</span> <span> Draw</span>
+            </div>
+            <button id="exit" class="recordexit">🏠⮌ Exit</button>
+        </div>
+    </div>
+
+  <!-- TRACK RECORD (sixth Page) -->
+   <div class="trackRecord" id="trackRec">
+    <h1>TRACK RECORD</h1>
+    <h2>Single Player</h2>
+    <div class="trackSinglePlayer">
+        <div class="spwin">
+            <p>Player Wins : </p>
+            <span id="spwin"></span>
+        </div>
+        <div class="splose">
+            <p>Player Lost : </p>
+            <span id="splose"></span>
+        </div>
+        <div class="spdraw">
+            <p>Match Draw : </p>
+            <span id="spdraw"></span>
+        </div>
+    </div>
+    <h2>Multiplayer</h2>
+    <div class="trackpXpO">
+        <div class="pX">
+            <h3>Player X</h3>
+            <div class="mpxwin">
+                <p>Wins : </p>
+                <span id="mpxwin"></span>
+            </div>
+            <div class="mpxlose">
+                <p>lost : </p>
+                <span id="mpxlose"></span>
+            </div>
+            <div class="mpxdraw">
+                <p>Draw : </p>
+                <span id="mpxdraw"></span>
+            </div>
+        </div>
+        <div class="pO">
+            <h3>Player O</h3>
+            <div class="mpowin">
+                <p>Wins : </p>
+                <span id="mpowin"></span>
+            </div>
+            <div class="mpolose">
+                <p>lost : </p>
+                <span id="mpolose"></span>
+            </div>
+            <div class="mpodraw">
+                <p>Draw : </p>
+                <span id="mpodraw"></span>
+            </div>
+        </div>
+    </div>
+    <button id="recordexit" class="recordexit">EXIT</button>
+   </div>
+
+  <!-- THEMES (Seventh Page) -->
+    <div class="themes">
+        <div class="sixtheme">
+            <div class="theme1 difftheme"></div>
+            <div class="theme2 difftheme"></div>
+            <div class="theme3 difftheme"></div>
+            <div class="theme4 difftheme"></div>
+            <div class="theme5 difftheme"></div>
+            <div class="theme6 difftheme"></div>
+            <p>More coming soon.....</p>
+        </div>
+        <button type="button" class="applytheme">APPLY</button>
+    </div>
+
+<script src="./script.js"></script>
+</body>
+</html>
